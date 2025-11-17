@@ -1,0 +1,42 @@
+{
+    "type": "layout",
+    "direction": "vertical",
+    "gap": "5px",
+    "children": [
+      {
+        "type": "visualization",
+        "mark": "line",
+        "encoding": {
+          "x": "x",
+          "y": "y",
+          "color": "blue"
+        }
+      },
+      {
+        "type": "layout",
+        "direction": "horizontal",
+        "gap": "5px",
+        "children": [
+          {
+            "type": "visualization",
+            "mark": "point",
+            "encoding": {
+              "x": "x",
+              "y": "y",
+              "color": "green"
+            }
+          },
+          {
+            "type": "visualization",
+            "mark": "area",
+            "encoding": {
+              "x": "x",
+              "y": "y",
+              "color": "purple"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

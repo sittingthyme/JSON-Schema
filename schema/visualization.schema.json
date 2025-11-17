@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/visualization.schema.json",
+    "title": "Mini Vega-Lite",
+    "description": "A mini Vega-lite visualization language",
+    "oneOf": [
+      { "$ref": "#/$defs/Visualization" },
+      { "$ref": "#/$defs/Layout" }
+    ],
+    "$defs": {
+      "Visualization": {
+        "type": "object",
+        "properties": {
+          "type": { "const": "visualization" },
+          "mark": {
+            "type": "string",
+            "enum": ["bar", "line", "point", "area"]
+          },
+          "encoding": {
+            "type": "object",
+            "properties": {
+              "x": { "type": "string" },
+              "y": { "type": "string" },
+              "color": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": ["type", "mark", "encoding"],
+        "additionalProperties": false
+      }, 
+      "Layout": {
+        "type": "object",
+        "properties": {
+          "type": { "const": "layout" },
+          "direction": {
+            "type": "string",
+            "enum": ["vertical", "horizontal"]
+          },
+          "gap": { "type": "string" },
+          "children": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/Node" },
+            "minItems": 1
+          }
+        },
+        "required": ["type", "direction", "gap", "children"],
+        "additionalProperties": false
+      },
+      "Node": {
+        "oneOf": [
+          { "$ref": "#/$defs/Visualization" },
+          { "$ref": "#/$defs/Layout" }
+        ]
+      }
+    }
+  }
+  
