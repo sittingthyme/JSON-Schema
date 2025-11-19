@@ -2,7 +2,8 @@ import json
 from builder import layout, visualization, encoding
 
 
-test1 = visualization().mark("bar").add_encoding(encoding().channel("x").field("x").channel("y").field("y").channel("color").field("grey"))
+test1 = visualization().mark("bar").add_encoding(
+    encoding().channel("x").field("x").channel("y").field("y").channel("color").field("grey"))
 test1 = test1.visualization
 test1["encoding"] = test1["encoding"].encoding
 with open("../schemaExamples/example1.json", "r") as f:
