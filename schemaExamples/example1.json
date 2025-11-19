@@ -1,0 +1,10 @@
+{
+    "type": "visualization",
+    "mark": "bar",
+    "encoding": {
+      "x": {"field" : "x"},
+      "y": {"field" : "y"},
+      "color": {"field" : "grey"}
+    }
+  }
+  

@@ -7,6 +7,7 @@
       { "$ref": "#/$defs/Visualization" },
       { "$ref": "#/$defs/Layout" }
     ],
+
     "$defs": {
       "Visualization": {
         "type": "object",
@@ -19,16 +20,38 @@
           "encoding": {
             "type": "object",
             "properties": {
-              "x": { "type": "string" },
-              "y": { "type": "string" },
-              "color": { "type": "string" }
+            "x": {
+                "type": "object",
+                "properties": {
+                "field": { "type": "string" }
+                },
+                "required": ["field"],
+                "additionalProperties": false
+            },
+            "y": {
+                "type": "object",
+                "properties": {
+                "field": { "type": "string" }
+                },
+                "required": ["field"],
+                "additionalProperties": false
+            },
+            "color": {
+                "type": "object",
+                "properties": {
+                "field": { "type": "string" }
+                },
+                "required": ["field"],
+                "additionalProperties": false
+            }
             },
             "additionalProperties": false
-          }
+        }
         },
         "required": ["type", "mark", "encoding"],
         "additionalProperties": false
       }, 
+
       "Layout": {
         "type": "object",
         "properties": {
@@ -47,6 +70,7 @@
         "required": ["type", "direction", "gap", "children"],
         "additionalProperties": false
       },
+
       "Node": {
         "oneOf": [
           { "$ref": "#/$defs/Visualization" },

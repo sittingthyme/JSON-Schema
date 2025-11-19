@@ -6,9 +6,9 @@ const ajv = new Ajv({ allErrors: true });
 // Load in schemas and examples
 const rawSchema = fs.readFileSync("../schema/visualization.schema.json", "utf8")
 const schema = JSON.parse(rawSchema);
-const raw1 = fs.readFileSync('../examples/example1.json', "utf8");
+const raw1 = fs.readFileSync('../schemaExamples/example1.json', "utf8");
 const example1 = JSON.parse(raw1, 'utf8');
-const raw2 = fs.readFileSync('../examples/example2.json', "utf8");
+const raw2 = fs.readFileSync('../schemaExamples/example2.json', "utf8");
 const example2 = JSON.parse(raw2, 'utf8');
 
 // Generate validating function for our schema

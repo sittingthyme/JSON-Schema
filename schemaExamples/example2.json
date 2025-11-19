@@ -7,9 +7,9 @@
         "type": "visualization",
         "mark": "line",
         "encoding": {
-          "x": "x",
-          "y": "y",
-          "color": "blue"
+          "x": {"field" : "x"},
+          "y": {"field" : "y"},
+          "color": {"field" : "blue"}
         }
       },
       {
@@ -21,18 +21,18 @@
             "type": "visualization",
             "mark": "point",
             "encoding": {
-              "x": "x",
-              "y": "y",
-              "color": "green"
+              "x": {"field" : "x"},
+              "y": {"field" : "y"},
+              "color": {"field" : "green"}
             }
           },
           {
             "type": "visualization",
             "mark": "area",
             "encoding": {
-              "x": "x",
-              "y": "y",
-              "color": "purple"
+              "x": {"field" : "x"},
+              "y": {"field" : "y"},
+              "color": {"field" : "purple"}
             }
           }
         ]
